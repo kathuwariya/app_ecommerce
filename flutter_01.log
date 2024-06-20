@@ -1,0 +1,77 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter debug_adapter
+
+## exception
+
+SentinelException: [Sentinel kind: Collected, valueAsString: <collected>] from getIsolate()
+
+```
+#0      new _OutstandingRequest (package:vm_service/src/vm_service.dart:265:34)
+#1      VmService._call.<anonymous closure> (package:vm_service/src/vm_service.dart:1771:25)
+#2      VmService._call (package:vm_service/src/vm_service.dart:1783:8)
+#3      VmService.getIsolate (package:vm_service/src/vm_service.dart:900:7)
+#4      MappedIterator.moveNext (dart:_internal/iterable.dart:403:20)
+#5      Future.wait (dart:async/future.dart:516:26)
+#6      DartDebugAdapter._configureExistingIsolates (package:dds/src/dap/adapters/dart.dart:766:24)
+#7      DartDebugAdapter.connectDebugger.<anonymous closure> (package:dds/src/dap/adapters/dart.dart:705:13)
+#8      DartDebugAdapter._withErrorHandling (package:dds/src/dap/adapters/dart.dart:2644:24)
+#9      DartDebugAdapter.connectDebugger (package:dds/src/dap/adapters/dart.dart:704:11)
+<asynchronous suspension>
+#10     FlutterDebugAdapter._connectDebugger (package:flutter_tools/src/debug_adapters/flutter_adapter.dart:381:9)
+<asynchronous suspension>
+#11     FlutterDebugAdapter._handleDebugPort (package:flutter_tools/src/debug_adapters/flutter_adapter.dart:462:7)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.19.5, on Microsoft Windows [Version 10.0.22631.3593], locale en-US)
+    • Flutter version 3.19.5 on channel stable at C:\flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 300451adae (3 months ago), 2024-03-27 21:54:07 -0500
+    • Engine revision e76c956498
+    • Dart version 3.3.3
+    • DevTools version 2.31.1
+
+[✓] Windows Version (Installed version of Windows is version 10 or higher)
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 33.0.0)
+    • Android SDK at C:\Users\User\AppData\Local\Android\Sdk
+    • Platform android-34, build-tools 33.0.0
+    • ANDROID_HOME = C:\Users\User\AppData\Local\Android\Sdk
+    • Java binary at: C:\Program Files\Android\Android Studio\jre\bin\java
+    • Java version OpenJDK Runtime Environment (build 11.0.13+0-b1751.21-8125866)
+    • All Android licenses accepted.
+
+[✓] Chrome - develop for the web
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[✗] Visual Studio - develop Windows apps
+    ✗ Visual Studio not installed; this is necessary to develop Windows apps.
+      Download at https://visualstudio.microsoft.com/downloads/.
+      Please install the "Desktop development with C++" workload, including all of its default components
+
+[✓] Android Studio (version 2021.3)
+    • Android Studio at C:\Program Files\Android\Android Studio
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 11.0.13+0-b1751.21-8125866)
+
+[✓] Connected device (4 available)
+    • SM A515F (mobile) • R58N13HZGBD • android-arm64  • Android 13 (API 33)
+    • Windows (desktop) • windows     • windows-x64    • Microsoft Windows [Version 10.0.22631.3593]
+    • Chrome (web)      • chrome      • web-javascript • Google Chrome 126.0.6478.62
+    • Edge (web)        • edge        • web-javascript • Microsoft Edge 126.0.2592.61
+
+[✓] Network resources
+    • All expected network resources are available.
+
+! Doctor found issues in 1 category.
+```
